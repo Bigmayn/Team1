@@ -4,11 +4,8 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: './', // Ensures paths are relative, which is crucial for deployment
   build: {
-    outDir: 'dist' // Ensure the output directory is set to 'dist'
-  },
-  base: './', // Use a relative base path for easier deployment
-  optimizeDeps: {
-    exclude: ['lucide-react'], // Keeping your original configuration here
-  },
+    outDir: 'dist', // Specify the build directory
+  }
 });
